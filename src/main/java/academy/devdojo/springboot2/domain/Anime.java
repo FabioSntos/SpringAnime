@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @Data
 @AllArgsConstructor
@@ -16,5 +17,7 @@ public class Anime {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+
+    @NotEmpty(message = "Name is required")
     private String name;
 }
